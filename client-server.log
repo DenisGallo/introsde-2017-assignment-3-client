@@ -1,0 +1,268 @@
+Server WSDL URL is: http://server-as3.herokuapp.com/people?wsdl 
+Method #1: readPersonList() => List<Person>
+Parameters: ---
+Response: 
+
+PERSON
+Id: 1
+Firstname: Mattia
+Lastname: Buffa
+Birthdate: 24-02-1992
+	ACTIVITY
+	Id: 1
+	Name: Play PUBG
+	Description: Play PUBG Squadd FPP
+	Place: Home
+	Rating: 4
+	Startdate: 15-11-2017 21:30:00.0
+	Activity type: Game
+
+
+PERSON
+Id: 2
+Firstname: Linda Marilena
+Lastname: Bertolli
+Birthdate: 28-01-1994
+	ACTIVITY
+	Id: 2
+	Name: Thesis
+	Description: Explain thesis
+	Place: Unitn
+	Rating: 3
+	Startdate: 20-11-2017 09:00:00.0
+	Activity type: School
+
+
+PERSON
+Id: 3
+Firstname: Denis
+Lastname: Gallo
+Birthdate: 08-04-1993
+	ACTIVITY
+	Id: 3
+	Name: Watch Stream
+	Description: Watch Buffin4576' stream
+	Place: Home
+	Rating: 2
+	Startdate: 15-11-2017 21:30:00.0
+	Activity type: Media
+
+
+PERSON
+Id: 4
+Firstname: Davide
+Lastname: Buffa
+Birthdate: 24-02-1992
+	ACTIVITY
+	Id: 4
+	Name: Facebook
+	Description: Post things on Facebook
+	Place: Home
+	Rating: 1
+	Startdate: 18-11-2017 21:30:00.0
+	Activity type: Social
+
+
+PERSON
+Id: 5
+Firstname: Luca
+Lastname: Buffa
+Birthdate: 24-02-1992
+	ACTIVITY
+	Id: 5
+	Name: Ruuning
+	Description: 400m run
+	Place: Stadium
+	Rating: 1
+	Startdate: 22-11-2017 11:00:00.0
+	Activity type: Sport
+
+
+Method #2: readPerson(Long id) => Person
+Parameters: id=1
+Response: 
+
+PERSON
+Id: 1
+Firstname: Mattia
+Lastname: Buffa
+Birthdate: 24-02-1992
+	ACTIVITY
+	Id: 1
+	Name: Play PUBG
+	Description: Play PUBG Squadd FPP
+	Place: Home
+	Rating: 4
+	Startdate: 15-11-2017 21:30:00.0
+	Activity type: Game
+
+
+Method #3: updatePerson(Person p) => Person
+Parameters: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><ns2:local id="1" xmlns:ns2="uri"><firstname>Giuseppe</firstname><lastname>Verdi</lastname></ns2:local>
+Response: 
+
+PERSON
+Id: 1
+Firstname: Giuseppe
+Lastname: Verdi
+Birthdate: 24-02-1992
+	ACTIVITY
+	Id: 1
+	Name: Play PUBG
+	Description: Play PUBG Squadd FPP
+	Place: Home
+	Rating: 4
+	Startdate: 15-11-2017 21:30:00.0
+	Activity type: Game
+
+
+Method #4: createPerson(Person p) => Person
+Parameters: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><ns2:local xmlns:ns2="uri"><firstname>Matteo</firstname><lastname>Berti</lastname><birthdate>24-04-1999</birthdate><activities><activity><name>Playing LoL</name><description>Playing competitive League of Legends</description><startdate>23-12-2017 01:55:00.0</startdate><place>Mantova</place><activity_type><name>Game</name></activity_type><rating>4</rating></activity></activities></ns2:local>
+Response: 
+
+PERSON
+Id: 6
+Firstname: Matteo
+Lastname: Berti
+Birthdate: 24-04-1999
+	ACTIVITY
+	Id: 6
+	Name: Playing LoL
+	Description: Playing competitive League of Legends
+	Place: Mantova
+	Rating: 4
+	Startdate: 23-12-2017 01:55:00.0
+	Activity type: Game
+
+
+Method #5: deletePerson(Long id)
+Parameters: id=6
+Response: 
+
+DELETED
+
+Method #6: readPersonPreferences(Long id, String activity_type) => List<Activity>
+Parameters: id=1, activity_type="Game"
+Response: 
+
+ACTIVITY
+Id: 1
+Name: Play PUBG
+Description: Play PUBG Squadd FPP
+Place: Home
+Rating: 4
+Startdate: 15-11-2017 21:30:00.0
+Activity type: Game
+
+
+Method #7: readPreferences() => List<Activity>
+Parameters: ---
+Response: 
+
+ACTIVITY
+Id: 1
+Name: Play PUBG
+Description: Play PUBG Squadd FPP
+Place: Home
+Rating: 4
+Startdate: 15-11-2017 21:30:00.0
+Activity type: Game
+
+ACTIVITY
+Id: 2
+Name: Thesis
+Description: Explain thesis
+Place: Unitn
+Rating: 3
+Startdate: 20-11-2017 09:00:00.0
+Activity type: School
+
+ACTIVITY
+Id: 3
+Name: Watch Stream
+Description: Watch Buffin4576' stream
+Place: Home
+Rating: 2
+Startdate: 15-11-2017 21:30:00.0
+Activity type: Media
+
+ACTIVITY
+Id: 4
+Name: Facebook
+Description: Post things on Facebook
+Place: Home
+Rating: 1
+Startdate: 18-11-2017 21:30:00.0
+Activity type: Social
+
+ACTIVITY
+Id: 5
+Name: Ruuning
+Description: 400m run
+Place: Stadium
+Rating: 1
+Startdate: 22-11-2017 11:00:00.0
+Activity type: Sport
+
+Method #8: readPersonPreferences(Long id, Long activity_id) => Activity
+Parameters: id=1, activity_id=1
+Response: 
+
+ACTIVITY
+Id: 1
+Name: Play PUBG
+Description: Play PUBG Squadd FPP
+Place: Home
+Rating: 4
+Startdate: 15-11-2017 21:30:00.0
+Activity type: Game
+
+
+Method #9: savePersonPreferences(Long id, Activity activity)
+Parameters: id=1, <?xml version="1.0" encoding="UTF-8" standalone="yes"?><ns2:local xmlns:ns2="uri"><name>Machine Learning</name><description>Doing the machine learning projects</description><startdate>014-12-2017 15:32:00.0</startdate><place>UniTN</place><activity_type><name>Programming</name></activity_type><rating>1</rating></ns2:local>
+Response: 
+
+CREATED
+
+Method #10: updatePersonPreferences(Long id, Activity activity) => Activity
+Parameters: id=1, <?xml version="1.0" encoding="UTF-8" standalone="yes"?><ns2:local id="1" xmlns:ns2="uri"><name>SDE Assignment3</name><description>Finishing assignment 3</description><startdate>22-12-2017 13:36:00.0</startdate><place>University of Trento</place><activity_type><name>Programming</name></activity_type><rating>2</rating></ns2:local>
+Response: 
+
+ACTIVITY
+Id: 1
+Name: SDE Assignment3
+Description: Finishing assignment 3
+Place: University of Trento
+Rating: 2
+Startdate: 22-12-2017 13:36:00.0
+Activity type: Programming
+
+
+Method #11 (Extra): evaluatePersonPreferences(Long id, Activity activity, int value) => Activity
+Parameters: id=1, value=5, <?xml version="1.0" encoding="UTF-8" standalone="yes"?><ns2:local id="6" xmlns:ns2="uri"><rating>0</rating></ns2:local>
+Response: 
+
+ACTIVITY
+Id: 6
+Name: Machine Learning
+Description: Doing the machine learning projects
+Place: UniTN
+Rating: 5
+Startdate: 014-12-2017 15:32:00.0
+Activity type: Programming
+
+
+Method #12 (Extra): getBestPersonPreference(Long id) => List<Activity>
+Parameters: id=1
+Response: 
+
+ACTIVITY
+Id: 6
+Name: Machine Learning
+Description: Doing the machine learning projects
+Place: UniTN
+Rating: 5
+Startdate: 014-12-2017 15:32:00.0
+Activity type: Programming
+
+
